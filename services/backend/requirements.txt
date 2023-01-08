@@ -1,0 +1,23 @@
+# General modules:
+django
+pillow
+djangorestframework
+
+# Env managements:
+python-decouple
+
+# Third party modules:
+markdown
+django-robots
+django-cors-headers
+drf-yasg[validation]
+
+# Deployment modules:
+gunicorn
+
+# Worker modules:
+celery
+django-redis
+
+# Database modules:
+psycopg2-binary
