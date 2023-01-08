@@ -4,9 +4,21 @@ WORKDIR /usr/src/app
 COPY . .
 
 RUN apt update && \
+    apt upgrade -y && \
     pip install -U pip && \
     pip install -r requirements.txt
 
-EXPOSE 80
+EXPOSE 80:80
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+
+# 1 : convert dockerfile to image
+# docker build -t mk78 .
+
+# 2 : create container from image with expose ports
+# docker create -p 80:80
+# 80: -> 80 port from public network
+# :80 -> 80 port from container network
+
+# 3 : start your container via container id
+# docker start ###
