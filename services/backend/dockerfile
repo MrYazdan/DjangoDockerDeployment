@@ -3,6 +3,8 @@ FROM python:3.11.0-slim
 WORKDIR /usr/src/app
 COPY . .
 
+RUN mkdir staticfiles
+
 RUN apt update && \
     apt upgrade -y && \
     pip install -U pip && \
