@@ -1,1 +1,1 @@
-docker run -e envs/db/dev.env -p 5432:5432 -d postgres
+docker run --env-file envs/db/dev.env -p 5432:5432 -d postgres
