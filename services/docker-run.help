@@ -1,0 +1,7 @@
+docker run --name db --env-file envs/db/dev.env -p 5432:5432 -d postgres
+
+# run psql on container
+psql -d django_deployment_db -U mk_admin
+
+# run container with envs :
+docker run --name backend --env-file envs/backend/prod.env -it --rm -p 80:80 backend

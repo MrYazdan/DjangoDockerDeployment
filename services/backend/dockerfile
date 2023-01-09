@@ -12,7 +12,8 @@ RUN apt update && \
 
 EXPOSE 80:80
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+CMD ["gunicorn", "backend.wsgi:application", "-w", "1", "-t", "2" ,"-b", "0.0.0.0:80"]
 
 # 1 : convert dockerfile to image
 # docker build -t mk78 .
